@@ -7,7 +7,7 @@ class Product extends Component {
         return (
             <>
                 <span className="m-2 text-info">Product Name</span>
-                <span className="m-2 badge bg-primary">{this.format(this.count)}</span>
+                <span className="m-2 badge bg-primary">{this.count === 0 ? 'zero' : this.count}</span>
                 <button className="m-2 btn btn-sm btn-success">+</button>
                 <button className="m-2 btn btn-sm btn-warning">-</button>
                 <button className="m-2 btn btn-sm btn-danger">delete</button>
@@ -16,12 +16,6 @@ class Product extends Component {
                 </ul>
             </>
         )
-    }
-    format() {
-        if (this.count == 0)
-            return 'zero';
-        else
-            return this.count;
     }
 }
 
