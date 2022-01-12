@@ -10,9 +10,9 @@ class Product extends Component {
             <>
                 <span className="m-2 text-info">Product Name</span>
                 <span className="m-2 badge bg-primary">{this.format()}</span>
-                <button onClick={this.increament()} className="m-2 btn btn-sm btn-success">+</button>
-                <button onClick={this.decreament.bind()} className="m-2 btn btn-sm btn-warning">-</button>
-                <button onClick={() => console.log('delete')} className="m-2 btn btn-sm btn-danger">delete</button>
+                <button onClick={this.increament} className="m-2 btn btn-sm btn-success">+</button>
+                <button onClick={this.decreament} className="m-2 btn btn-sm btn-warning">-</button>
+                <button onClick={this.delete} className="m-2 btn btn-sm btn-danger">delete</button>
                 <ul>
                     {list.map((element, index) => <li key={index}>{element}</li>)}
                 </ul>
@@ -26,12 +26,16 @@ class Product extends Component {
             return 'zero';
         else
             return this.count;
+    };
+
+    increament = ()=> {
+        console.log('increament');
     }
-    increament = () => {
-        console.log('increament' + a, this);
-    }
-    decreament(a) {
+    decreament = ()=> {
         console.log('decreament');
+    }
+    delete = () => {
+        console.log('delete')
     }
 }
 
