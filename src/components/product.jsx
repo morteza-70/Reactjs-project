@@ -1,5 +1,6 @@
 import { Component } from "react";
 
+const list = ['item one', 'item two', 'item three']
 class Product extends Component {
     render() {
         return (
@@ -9,6 +10,9 @@ class Product extends Component {
                 <button className="m-2 btn btn-sm btn-success">+</button>
                 <button className="m-2 btn btn-sm btn-warning">-</button>
                 <button className="m-2 btn btn-sm btn-danger">delete</button>
+                <ul>
+                    {list.map((element, index) => <li key={index}>{element}</li>)}
+                </ul>
             </>
         )
     }
