@@ -23,18 +23,18 @@ class Product extends Component {
             </>
         )
     }
-    format() {
+    format = () => {
         if (this.state.count === 0)
             return 'zero';
         else
             return this.state.count;
     };
 
-    increament = ()=> {
+    increament = () => {
         const {count} = this.state;
         this.setState({count: count + 1});
     }
-    decreament = ()=> {
+    decreament = () => {
         const {count} = this.state;
         this.setState({count: count - 1});
     }
