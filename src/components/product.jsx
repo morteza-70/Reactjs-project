@@ -7,9 +7,10 @@ class Product extends Component {
         count : 0
     }
     render() {
+        const {productName} = this.props;
         return (
             <div>
-                <span className="m-2 text-info">{this.props.productName}</span>
+                <span className="m-2 text-info">{productName}</span>
                 <span className="m-2 badge bg-primary">{this.format()}</span>
                 <button onClick={this.increament} className="m-2 btn btn-sm btn-success">+</button>
                 <button onClick={this.decreament} className="m-2 btn btn-sm btn-warning">-</button>
