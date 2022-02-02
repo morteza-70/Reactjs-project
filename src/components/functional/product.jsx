@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const Product = ( {productName} ) => {
-    const [count, setCount]= useState(0);
+const Product = ({productName, count: propCount, children}) => {
+    const [count, setCount]= useState(propCount);
 
     return (
         <div>
@@ -10,6 +10,7 @@ const Product = ( {productName} ) => {
             <button onClick={handleIncreament} className="m-2 btn btn-sm btn-success">+</button>
             <button onClick={handleDecreament} className="m-2 btn btn-sm btn-warning">-</button>
             <button onClick={handleDelete} className="m-2 btn btn-sm btn-danger">delete</button>
+            {children}
         </div>
      );
     function format() {

@@ -1,10 +1,8 @@
 import { Component } from "react";
 import './product.css';
-
-const list = ['item one', 'item two', 'item three'];
 class Product extends Component {    
     state = {  // when use that change value
-        count : 0
+        count : this.props.count
     }
     render() {
         const {productName} = this.props;
@@ -14,7 +12,8 @@ class Product extends Component {
                 <span className="m-2 badge bg-primary">{this.format()}</span>
                 <button onClick={this.increament} className="m-2 btn btn-sm btn-success">+</button>
                 <button onClick={this.decreament} className="m-2 btn btn-sm btn-warning">-</button>
-                <button onClick={this.delete} className="m-2 btn btn-sm btn-danger">delete</button>                
+                <button onClick={this.delete} className="m-2 btn btn-sm btn-danger">delete</button>
+                {this.props.children}
             </div>
         )
     }
