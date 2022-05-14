@@ -1,6 +1,5 @@
 import { Component } from "react";
 import Product from "./product";
-
 class Products extends Component {
     state = {
         products : [

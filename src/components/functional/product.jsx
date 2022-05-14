@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const Product = ({productName, count: propCount, children}) => {
+    
     const [count, setCount]= useState(propCount);
 
     return (
