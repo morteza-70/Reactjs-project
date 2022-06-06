@@ -22,8 +22,9 @@ class Products extends Component {
         );
     }
 
-    handleDelete = (productId) => {
-        console.log(productId);
+    handleDelete = (productId)=>{
+    const newProducts = this.state.products.filter(p => p.id !== productId);
+    this.setState({products : newProducts});
     }
 }
  

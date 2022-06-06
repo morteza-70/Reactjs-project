@@ -22,7 +22,8 @@ const Products = () => {
     );
     
     function handleDelete (productId) {
-        console.log(productId);
+        const newProducts = products.filter(p => p.id !== productId);
+        setProducts(newProducts);
     }
 };
  
