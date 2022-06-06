@@ -10,9 +10,9 @@ class Product extends Component {
             <div>
                 <span className="m-2 text-info">{productName}</span>
                 <span className="m-2 badge bg-primary">{this.format()}</span>
-                <button onClick={this.increament} className="m-2 btn btn-sm btn-success">+</button>
-                <button onClick={this.decreament} className="m-2 btn btn-sm btn-warning">-</button>
-                <button onClick={this.delete} className="m-2 btn btn-sm btn-danger">delete</button>
+                <button onClick={this.handleIncreament} className="m-2 btn btn-sm btn-success">+</button>
+                <button onClick={this.handleDecreament} className="m-2 btn btn-sm btn-warning">-</button>
+                <button onClick={this.handleDelete} className="m-2 btn btn-sm btn-danger">delete</button>
                 {this.props.children}
             </div>
         )
@@ -24,16 +24,16 @@ class Product extends Component {
             return this.state.count;
     };
 
-    increament = () => {
+    handleIncreament = () => {
         const {count} = this.state;
         this.setState({count: count + 1});
     }
-    decreament = () => {
+    handleDecreament = () => {
         const {count} = this.state;
         this.setState({count: count - 1});
     }
-    delete = () => {
-        console.log('delete')
+    handleDelete = () => {
+        this.props.onDelete(this.props.id);
     }
 }
 

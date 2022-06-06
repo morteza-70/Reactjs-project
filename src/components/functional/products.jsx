@@ -13,9 +13,9 @@ const Products = () => {
         <>
             {products.map((p, index) => (
                 <Product key={index} count={p.count} productName = {p.productName} >
-                    <p>
-                        Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
-                    </p>
+                <p>
+                    Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+                </p>
                 </Product>
             ))}
         </>
