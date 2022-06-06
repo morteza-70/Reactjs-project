@@ -12,7 +12,7 @@ const Products = () => {
     return ( 
         <>
             {products.map((p, index) => (
-                <Product key={index} count={p.count} productName = {p.productName} >
+                <Product onDelete={handleDelete} productId={p.id} key={index} count={p.count} productName = {p.productName} >
                 <p>
                     Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
                 </p>
@@ -20,6 +20,10 @@ const Products = () => {
             ))}
         </>
     );
+    
+    function handleDelete (productId) {
+        console.log(productId);
+    }
 };
  
 export default Products;

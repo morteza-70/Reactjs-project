@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Product = ({productName, count: propCount, children}) => {
+const Product = ({productName, count: propCount, children, productId}) => {
     
     const [count, setCount]= useState(propCount);
 
@@ -27,7 +27,7 @@ const Product = ({productName, count: propCount, children}) => {
         setCount(count - 1);
     };
     function handleDelete() {
-        console.log('delete');
+        console.log(productId);
     };
 }
  
