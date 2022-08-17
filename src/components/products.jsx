@@ -12,7 +12,7 @@ class Products extends Component {
         return (
             <>
                 {this.state.products.map((p, index) => (
-                    <Product onDelete={this.handleDelete} id={p.id} key={index} count={p.count} productName={p.productName}>
+                    <Product onDelete={this.handleDelete} productId={p.id} key={index} count={p.count} productName={p.productName}>
                         <p>
                             Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
                         </p>
@@ -21,11 +21,9 @@ class Products extends Component {
             </>
         );
     }
-
-    handleDelete = (productId)=>{
-    const newProducts = this.state.products.filter(p => p.id !== productId);
-    this.setState({products : newProducts});
+    handleDelete = (productId) => {
+        const newProducts = this.state.products.filter(p => p.id !== productId);
+        this.setState({products : newProducts});
     }
 }
- 
 export default Products;
