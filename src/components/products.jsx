@@ -11,8 +11,9 @@ class Products extends Component {
     render() { 
         return (
             <>
+                <button onClick={this.handleReset} className="btn btn-primary">Reset</button>
                 {this.state.products.map((p, index) => (
-                    <Product onDelete={this.handleDelete} productId={p.id} key={index} count={p.count} productName={p.productName}>
+                    <Product onIncrement={this.handleIncrement} onDecrement={this.handleDecrement} onDelete={this.handleDelete} id={p.id} key={index} count={p.count} productName={p.productName}>
                         <p>
                             Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
                         </p>
@@ -21,8 +22,31 @@ class Products extends Component {
             </>
         );
     }
+
     handleDelete = (productId) => {
         const newProducts = this.state.products.filter(p => p.id !== productId);
+        this.setState({products : newProducts});
+    }
+
+    handleReset = () => {
+        const newProducts= this.state.products.map(p => {
+            p.count = 0;
+            return p;
+        });
+        this.setState({products : newProducts});
+    }
+
+    handleIncrement = (productId) => {
+        const newProducts = [...this.state.products];
+        const index = newProducts.findIndex(p=> p.id === productId);
+        newProducts[index].count += 1;
+        this.setState({products: newProducts});
+    }
+
+    handleDecrement = (productId) => {
+        const newProducts = [...this.state.products];
+        const index = newProducts.findIndex(p=> p.id === productId);
+        newProducts[index].count -= 1;
         this.setState({products : newProducts});
     }
 }
