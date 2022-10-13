@@ -29,11 +29,11 @@ class Products extends Component {
     }
 
     handleReset = () => {
-        const newProducts= this.state.products.map(p => {
+        const newProducts = this.state.products.map(p=>{
             p.count = 0;
             return p;
         });
-        this.setState({products : newProducts});
+        this.setState({products: newProducts});
     }
 
     handleIncrement = (productId) => {

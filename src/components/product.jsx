@@ -30,7 +30,7 @@ class Product extends Component {
     };
 
     handleDelete = () => {
-        this.props.onDelete(this.props.productId);
+        this.props.onDelete(this.props.id);
     };
 }
 
