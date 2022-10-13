@@ -1,12 +1,13 @@
 import { Component } from 'react';
+import Products from './components/products';
+import Navbar from './components/navbar';
 
-// class Component example
 class App extends Component {
     render () {
         return (
             <>
-                <h1>hello Morteza</h1>
-                <h1>this is react morteza</h1>
+                <Navbar />
+                <Products />
             </>
         )
     }
