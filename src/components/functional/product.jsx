@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import '../product.css';
 const Product = ({productName, count, onIncrement, onDecrement , children, productId, onDelete}) => {
    
     return (
