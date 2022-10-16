@@ -1,7 +1,4 @@
-import { calculateNewValue } from '@testing-library/user-event/dist/utils';
-import React, { Component } from 'react'
-
-const Navbar = (props) => {
+const Navbar = ({products}) => {
     return (
         <nav className='navbar navbar-expand-lg navbar-light bg-light'>
             <div className='container-fluid'>
@@ -14,7 +11,7 @@ const Navbar = (props) => {
 
     // calculateSum via reduce array
     function calculateSum () {
-       const sum =  props.products.reduce((previousValue, currentValue) =>
+       const sum =  products.reduce((previousValue, currentValue) =>
             previousValue +
             currentValue.count,
             0
@@ -25,7 +22,7 @@ const Navbar = (props) => {
     // calculateSum via foreach
     // function calculateSum () {
     //     let sum = 0;
-    //     props.products.forEach(p => {
+    //     products.forEach(p => {
     //         sum += p.count;
     //     });
     //     return sum;

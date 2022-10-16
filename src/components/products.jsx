@@ -1,22 +1,18 @@
 import { Component } from "react";
 import Product from "./product";
+import ProductContext from "../context/products";
 class Products extends Component {
-    state = {
-        products : [
-            {id: 1, count: 4, productName: 'Laptop'},
-            {id: 2, count: 8, productName: 'Airpod'},
-            {id: 3, count: 6, productName: 'Monitor'},
-        ]
-    }
+    static contextType = ProductContext;
+    
     render() { 
         return (
             <>
-                <button onClick={this.props.onReset} className="btn btn-primary">Reset</button>
-                {this.props.products.map((p, index) => (
+                <button onClick={this.context.onReset} className="btn btn-primary">Reset</button>
+                {this.context.products.map((p, index) => (
                     <Product
-                    onIncrement={this.props.onIncrement}
-                    onDecrement={this.props.onDecrement}
-                    onDelete={this.props.onDelete}
+                    onIncrement={this.context.onIncrement}
+                    onDecrement={this.context.onDecrement}
+                    onDelete={this.context.onDelete}
                     id={p.id}
                     key={index}
                     count={p.count}

@@ -1,6 +1,9 @@
 import { Component } from "react";
 import './product.css';
+import ProductContext from "../context/products";
 class Product extends Component {
+    static contextType = ProductContext;
+
     render() {
         const {productName} = this.props;
         return (
@@ -22,15 +25,15 @@ class Product extends Component {
     };
 
     handleIncrement = () => {
-        this.props.onIncrement(this.props.id);
+        this.context.onIncrement(this.props.id);
     };
 
     handleDecrement = () => {
-        this.props.onDecrement(this.props.id);;
+        this.context.onDecrement(this.props.id);;
     };
 
     handleDelete = () => {
-        this.props.onDelete(this.props.id);
+        this.context.onDelete(this.props.id);
     };
 }
 
