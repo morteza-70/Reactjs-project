@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import Products from './components/products';
 import Navbar from './components/navbar';
-import ProductContext from './context/products';
+import ProductsContext from './context/products';
 
 class App extends Component {
     state = {
@@ -14,7 +14,7 @@ class App extends Component {
     render () {
         return (
             <>
-                <ProductContext.Provider
+                <ProductsContext.Provider
                     value = {{
                         products : this.state.products,
                         onIncrement : this.handleIncrement,
@@ -25,7 +25,7 @@ class App extends Component {
                 >                 
                     <Navbar />
                     <Products />
-                </ProductContext.Provider>
+                </ProductsContext.Provider>
             </>
         ); 
     }

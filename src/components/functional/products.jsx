@@ -1,19 +1,22 @@
 import Product from './product';
+import { useContext } from 'react';
+import ProductsContext from '../../context/products';
 
-const Products = ({products, onReset, onIncrement, onDecrement, onDelete}) => {
+const Products = () => {
+    const productsContext = useContext(ProductsContext)
     return ( 
         <>
-            <button onClick={onReset} className='btn btn-primary'>Reset</button>
-            {products.map((p, index) => (
+            <button onClick={productsContext.onReset} className='btn btn-primary'>Reset</button>
+            {productsContext.products.map((p, index) => (
                 <Product
-                onReset={onReset}
-                onIncrement={onIncrement}
-                onDecrement={onDecrement}
-                onDelete={onDelete}
-                productId={p.id}
-                key={index}
-                count={p.count}
-                productName = {p.productName} >
+                    onIncrement={productsContext.onIncrement}
+                    onDecrement={productsContext.onDecrement}
+                    onDelete={productsContext.onDelete}
+                    productId={p.id}
+                    key={index}
+                    count={p.count}
+                    productName = {p.productName} 
+                >
                     <p>
                         Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
                     </p>

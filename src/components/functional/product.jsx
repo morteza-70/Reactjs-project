@@ -1,6 +1,9 @@
 import '../product.css';
-const Product = ({productName, count, onIncrement, onDecrement , children, productId, onDelete}) => {
-   
+import { useContext } from 'react';
+import ProductsContext from './../../context/products';
+
+const Product = ({productName, count, children, productId}) => {
+   const productsContext = useContext(ProductsContext);
     return (
         <div>
             <span className="m-2 text-info">{productName}</span>
@@ -20,15 +23,15 @@ const Product = ({productName, count, onIncrement, onDecrement , children, produ
     };
 
     function handleIncreament () {
-        onIncrement(productId);
+        productsContext.onIncrement(productId);
     };
 
     function handleDecreament() {
-        onDecrement(productId);
+        productsContext.onDecrement(productId);
     };
     
     function handleDelete() {
-        onDelete(productId);
+        productsContext.onDelete(productId);
     };
 }
  
