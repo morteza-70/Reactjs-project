@@ -11,7 +11,17 @@ class App extends Component {
             {id: 3, count: 6, productName: 'Monitor'},
         ]
     }
+
+    constructor(props) {
+        super(props);
+        console.log('App- constructor');
+    }
+
+    componentDidMount() {
+        console.log('App - Didmonting');
+    }
     render () {
+        console.log('App- rendering');
         return (
             <>
                 <ProductsContext.Provider

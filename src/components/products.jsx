@@ -3,8 +3,18 @@ import Product from "./product";
 import ProductContext from "../context/products";
 class Products extends Component {
     static contextType = ProductContext;
-    
-    render() { 
+
+    constructor(props) {
+        super(props);
+        console.log('Products - constructor');
+    }
+
+    componentDidMount() {
+        console.log('Products - Didmonting');
+    }
+
+    render() {
+        console.log('Products- rendering');
         return (
             <>
                 <button onClick={this.context.onReset} className="btn btn-primary">Reset</button>
