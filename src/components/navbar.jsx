@@ -2,13 +2,8 @@ import React from "react";
 import ProductContext from "../context/products";
 class Navbar extends React.Component {
     static contextType = ProductContext;
-    
-    componentDidUpdate() {
-        console.log('Navbar - update');
-    }
 
     render() {
-        console.log('Navbar- rendering');
         return (
             <nav className='navbar navbar-expand-lg navbar-light bg-light'>
                 <div className='container-fluid'>

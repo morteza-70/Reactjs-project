@@ -12,16 +12,7 @@ class App extends Component {
         ]
     }
 
-    componentDidUpdate() {
-        console.log(' App - update');
-    }
-
-    componentWillUnmount() {
-        console.log('App - Unmount');
-    }
-
     render () {
-        console.log('App- rendering');
         return (
             <>
                 <ProductsContext.Provider

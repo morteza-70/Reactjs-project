@@ -4,16 +4,7 @@ import ProductContext from "../context/products";
 class Product extends Component {
     static contextType = ProductContext;
 
-    componentDidUpdate() {
-        console.log('Product - update');
-    }
-
-    componentWillUnmount() {
-        console.log('Product - Unmount');
-    }    
-
     render() {
-        console.log('Product- rendering');
         const {productName} = this.props;
         return (
             <div>
