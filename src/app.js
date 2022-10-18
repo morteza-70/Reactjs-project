@@ -12,14 +12,14 @@ class App extends Component {
         ]
     }
 
-    constructor(props) {
-        super(props);
-        console.log('App- constructor');
+    componentDidUpdate() {
+        console.log(' App - update');
     }
 
-    componentDidMount() {
-        console.log('App - Didmonting');
+    componentWillUnmount() {
+        console.log('App - Unmount');
     }
+
     render () {
         console.log('App- rendering');
         return (

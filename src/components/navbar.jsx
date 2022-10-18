@@ -3,13 +3,8 @@ import ProductContext from "../context/products";
 class Navbar extends React.Component {
     static contextType = ProductContext;
     
-    constructor(props) {
-        super(props);
-        console.log('Navbar - constructor');
-    }
-
-    componentDidMount() {
-        console.log('Navbar - Didmonting');
+    componentDidUpdate() {
+        console.log('Navbar - update');
     }
 
     render() {
